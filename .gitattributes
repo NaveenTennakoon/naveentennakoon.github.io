@@ -1,2 +1,5 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+# Normalise line endings for text files
+* text=auto eol=lf
+
+*.pdf binary
+*.webp binary

@@ -1,0 +1,318 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--c-black);
+  color: var(--c-text);
+  font-family: var(--f-sans);
+  font-size: var(--t-body);
+  font-weight: 300;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+  font-variant-numeric: lining-nums;
+  overflow-x: clip;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+p,
+ul,
+ol,
+figure {
+  margin: 0;
+}
+
+ul,
+ol {
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+:focus-visible {
+  outline: 1px solid var(--c-white);
+  outline-offset: 5px;
+}
+
+::selection {
+  color: var(--c-black);
+  background: var(--c-white);
+}
+
+.icon {
+  width: 16px;
+  height: 16px;
+  flex: none;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.container {
+  position: relative;
+  z-index: var(--z-content);
+  width: 100%;
+  max-width: var(--max-w);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.section {
+  position: relative;
+  padding-block: var(--section-y);
+  background: var(--c-black);
+  scroll-margin-top: var(--header-h);
+}
+
+/* Film grain over every section (static, never animated) */
+.grain::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: var(--z-veil);
+  pointer-events: none;
+  background-image: var(--grain);
+  background-size: 200px 200px;
+  opacity: 0.08;
+}
+
+/* Type */
+.label {
+  font-family: var(--f-sans);
+  font-size: var(--t-label);
+  font-weight: 500;
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  color: var(--c-muted);
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: var(--s-4);
+  font-size: var(--t-label);
+  font-weight: 500;
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  color: var(--c-muted);
+}
+
+.eyebrow--center {
+  justify-content: center;
+}
+
+/* Hairline that draws out from the text (GSAP scales it) */
+.rule {
+  display: block;
+  flex: none;
+  width: 40px;
+  height: 1px;
+  background: currentColor;
+  transform-origin: 0 50%;
+}
+
+.rule--end {
+  transform-origin: 100% 50%;
+}
+
+.h2 {
+  font-family: var(--f-serif);
+  font-weight: 500;
+  font-size: var(--t-h2);
+  line-height: 1;
+  letter-spacing: -0.015em;
+}
+
+.h3 {
+  font-family: var(--f-serif);
+  font-weight: 500;
+  font-size: var(--t-h3);
+  line-height: 1.1;
+}
+
+.lead {
+  font-family: var(--f-serif);
+  font-weight: 500;
+  font-size: var(--t-lead);
+  line-height: 1.3;
+  color: var(--c-text);
+  text-wrap: pretty;
+}
+
+.body {
+  font-size: var(--t-body);
+  line-height: 1.8;
+  color: var(--c-text-2);
+  text-wrap: pretty;
+}
+
+/* Line masks for headline reveals: each line rises inside its own overflow box */
+.line {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 0.08em;
+}
+
+.line__inner {
+  display: inline-block;
+}
+
+/* Buttons */
+.btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--s-3);
+  min-height: 54px;
+  padding: 0 30px;
+  isolation: isolate;
+  overflow: hidden;
+  border: 1px solid var(--c-line-strong);
+  color: var(--c-white);
+  background: transparent;
+  font-size: var(--t-label);
+  font-weight: 500;
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition:
+    transform var(--d-base) var(--e-out),
+    border-color var(--d-fast) linear;
+}
+
+/* White fill sweeps left to right; difference blend flips the label to black where it crosses */
+.btn::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  background: var(--c-white);
+  mix-blend-mode: difference;
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path var(--d-slow) var(--e-in-out);
+  pointer-events: none;
+}
+
+.btn:hover,
+.btn:focus-visible {
+  border-color: var(--c-white);
+}
+
+.btn:hover::after,
+.btn:focus-visible::after {
+  clip-path: inset(0 0 0 0);
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.btn--solid {
+  background: var(--c-white);
+  color: var(--c-black);
+  border-color: var(--c-white);
+}
+
+.btn--sm {
+  min-height: 44px;
+  padding: 0 20px;
+}
+
+.btn__icon {
+  width: 16px;
+  height: 16px;
+}
+
+.icon-btn {
+  display: inline-grid;
+  place-items: center;
+  width: 54px;
+  height: 54px;
+  border: 1px solid var(--c-line-strong);
+  border-radius: var(--r-round);
+  transition:
+    transform var(--d-base) var(--e-out),
+    border-color var(--d-fast) linear;
+}
+
+.icon-btn svg {
+  width: 18px;
+  height: 18px;
+  transition: transform var(--d-base) var(--e-out);
+}
+
+.icon-btn:hover {
+  border-color: var(--c-white);
+}
+
+.icon-btn:hover svg {
+  transform: translateY(-3px);
+}
+
+/* Photo + veil: every image sits in one of these */
+.media {
+  position: absolute;
+  inset: 0;
+  z-index: var(--z-bg);
+  overflow: hidden;
+}
+
+.media img {
+  position: absolute;
+  left: 0;
+  top: -8%;
+  width: 100%;
+  height: 116%;
+  object-fit: cover;
+}
+
+.veil {
+  position: absolute;
+  inset: 0;
+  z-index: var(--z-veil);
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 1ms !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

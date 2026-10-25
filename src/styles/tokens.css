@@ -1,0 +1,75 @@
+/* Design tokens — monochrome. Change values here, not in components. */
+:root {
+  /* Colour */
+  --c-black: #000;
+  --c-ink: #070707; /* card surface */
+  --c-ink-2: #0e0e0e; /* card hover */
+  --c-line: rgb(255 255 255 / 0.12); /* hairlines */
+  --c-line-strong: rgb(255 255 255 / 0.5);
+  --c-text: #fff;
+  --c-text-2: #b5b5b5; /* body text, 10.3:1 on black */
+  --c-muted: #8c8c8c; /* labels, 6.2:1 on black */
+  --c-dim: #4a4a4a; /* unreached roadmap, decorative only */
+  --c-white: #fff;
+
+  /* Type */
+  --f-serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --f-sans: 'Poppins', 'Helvetica Neue', Arial, sans-serif;
+  --t-hero: clamp(58px, 9.4vw, 152px);
+  --t-h2: clamp(46px, 6.2vw, 100px);
+  --t-year: clamp(40px, 4vw, 58px);
+  --t-h3: clamp(26px, 2.5vw, 36px);
+  --t-lead: clamp(22px, 2vw, 30px);
+  --t-body: clamp(15px, 1.1vw, 17px);
+  --t-label: 11px;
+  --track-label: 0.22em;
+
+  /* Space */
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 24px;
+  --s-6: 32px;
+  --s-7: 48px;
+  --s-8: 64px;
+  --s-9: 96px;
+  --s-10: 128px;
+  --gutter: clamp(20px, 4.4vw, 64px);
+  --section-y: clamp(96px, 11vw, 168px);
+  --max-w: 1440px;
+  --col-gap: 32px;
+  --header-h: 84px;
+
+  /* Shape */
+  --r-round: 999px;
+
+  /* Motion — durations */
+  --d-instant: 120ms;
+  --d-fast: 240ms;
+  --d-base: 450ms;
+  --d-slow: 800ms;
+  --d-reveal: 1200ms;
+
+  /* Motion — easings (GSAP names in comments) */
+  --e-out: cubic-bezier(0.16, 1, 0.3, 1); /* expo.out */
+  --e-in-out: cubic-bezier(0.76, 0, 0.24, 1); /* power4.inOut */
+  --e-soft: cubic-bezier(0.33, 1, 0.68, 1); /* power2.out */
+  --e-in: cubic-bezier(0.7, 0, 0.84, 0); /* expo.in */
+
+  /* Film grain, static */
+  --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+
+  --z-bg: 0;
+  --z-veil: 1;
+  --z-content: 2;
+  --z-header: 50;
+  --z-menu: 100;
+  --z-cursor: 200;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --header-h: 72px;
+  }
+}
