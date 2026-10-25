@@ -1,404 +1,551 @@
-<!DOCTYPE HTML>
-<html>
-	<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Naveen Tennakoon</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="" />
-	<meta name="keywords" content="" />
-	<meta name="author" content="" />
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Naveen Tennakoon — Software Engineer</title>
+    <meta
+      name="description"
+      content="Naveen Tennakoon is a software engineer building web, mobile and cloud products with a focus on minimal, dependable design."
+    />
+    <meta name="author" content="Naveen Tennakoon" />
+    <meta name="theme-color" content="#000000" />
+    <link rel="canonical" href="https://naveentennakoon.github.io/" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 
-  <!-- Facebook and Twitter integration -->
-	<meta property="og:title" content=""/>
-	<meta property="og:image" content=""/>
-	<meta property="og:url" content=""/>
-	<meta property="og:site_name" content=""/>
-	<meta property="og:description" content=""/>
-	<meta name="twitter:title" content="" />
-	<meta name="twitter:image" content="" />
-	<meta name="twitter:url" content="" />
-	<meta name="twitter:card" content="" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Naveen Tennakoon — Software Engineer" />
+    <meta
+      property="og:description"
+      content="Software engineer building web, mobile and cloud products."
+    />
+    <meta property="og:url" content="https://naveentennakoon.github.io/" />
+    <meta property="og:site_name" content="Naveen Tennakoon" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@NaveenTz" />
 
-	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-	<link rel="shortcut icon" href="favicon.ico">
+    <script type="module" src="/src/main.ts"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container site-header__bar">
+        <a class="brand" href="#home" aria-label="Naveen Tennakoon, back to top">NT</a>
 
-	<link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700" rel="stylesheet">
-	
-	<!-- Animate.css -->
-	<link rel="stylesheet" href="css/animate.css">
-	<!-- Icomoon Icon Fonts-->
-	<link rel="stylesheet" href="css/icomoon.css">
-	<!-- Bootstrap  -->
-	<link rel="stylesheet" href="css/bootstrap.css">
-	<!-- Flexslider  -->
-	<link rel="stylesheet" href="css/flexslider.css">
-	<!-- Flaticons  -->
-	<link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
-	<!-- Owl Carousel -->
-	<link rel="stylesheet" href="css/owl.carousel.min.css">
-	<link rel="stylesheet" href="css/owl.theme.default.min.css">
-	<!-- Theme style  -->
-	<link rel="stylesheet" href="css/style.css">
+        <nav class="nav" aria-label="Primary">
+          <ul class="nav__list">
+            <li><a class="nav__link" href="#home" aria-current="true">Home</a></li>
+            <li><a class="nav__link" href="#about">About</a></li>
+            <li><a class="nav__link" href="#experience">Experience</a></li>
+            <li><a class="nav__link" href="#blog">Blog</a></li>
+            <li><a class="nav__link" href="#contact">Contact</a></li>
+          </ul>
+        </nav>
 
-	<!-- Modernizr JS -->
-	<script src="js/modernizr-2.6.2.min.js"></script>
-	<!-- FOR IE9 below -->
-	<!--[if lt IE 9]>
-	<script src="js/respond.min.js"></script>
-	<![endif]-->
+        <div class="header-cta">
+          <button
+            class="menu-btn"
+            type="button"
+            aria-controls="mobile-menu"
+            aria-expanded="false"
+            data-menu-toggle
+          >
+            <span>Menu</span><span class="menu-btn__icon" aria-hidden="true"></span>
+          </button>
+        </div>
+      </div>
+      <div class="progress" aria-hidden="true"><div class="progress__bar"></div></div>
+    </header>
 
-	</head>
-	<body>
-	<div id="colorlib-page">
-		<div class="container-wrap">
-		<a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
-		<aside id="colorlib-aside" role="complementary" class="border js-fullheight">
-			<div class="text-center">
-				<div class="author-img" style="background-image: url(images/about.jpg);"></div>
-				<h1 id="colorlib-logo"><a href="index.html">Naveen Tennakoon</a></h1>
-				<span class="position">Software Engineer</span>
-			</div>
-			<nav id="colorlib-main-menu" role="navigation" class="navbar">
-				<div id="navbar" class="collapse">
-					<ul>
-						<li class="active"><a href="#" data-nav-section="home">Home</a></li>
-						<li><a href="#" data-nav-section="about">About</a></li>
-						<li><a href="#" data-nav-section="experience">Experience</a></li>
-						<li><a href="#" data-nav-section="blog">Blog</a></li>
-						<li><a href="#" data-nav-section="contact">Contact</a></li>
-					</ul>
-				</div>
-			</nav>
+    <div
+      class="mobile-menu"
+      id="mobile-menu"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Site menu"
+      hidden
+    >
+      <div class="mobile-menu__bar">
+        <a class="brand" href="#home" data-menu-link aria-label="Naveen Tennakoon, back to top"
+          >NT</a
+        >
+        <button
+          class="menu-btn"
+          type="button"
+          aria-expanded="true"
+          aria-controls="mobile-menu"
+          data-menu-close
+        >
+          <span>Close</span><span class="menu-btn__icon is-x" aria-hidden="true"></span>
+        </button>
+      </div>
+      <nav aria-label="Mobile">
+        <ul class="mobile-menu__list">
+          <li>
+            <a class="mobile-menu__link" href="#home" data-menu-link
+              ><span class="label mobile-menu__num">01</span
+              ><span class="mobile-menu__text">Home</span></a
+            >
+          </li>
+          <li>
+            <a class="mobile-menu__link" href="#about" data-menu-link
+              ><span class="label mobile-menu__num">02</span
+              ><span class="mobile-menu__text">About</span></a
+            >
+          </li>
+          <li>
+            <a class="mobile-menu__link" href="#experience" data-menu-link
+              ><span class="label mobile-menu__num">03</span
+              ><span class="mobile-menu__text">Experience</span></a
+            >
+          </li>
+          <li>
+            <a class="mobile-menu__link" href="#blog" data-menu-link
+              ><span class="label mobile-menu__num">04</span
+              ><span class="mobile-menu__text">Blog</span></a
+            >
+          </li>
+          <li>
+            <a class="mobile-menu__link" href="#contact" data-menu-link
+              ><span class="label mobile-menu__num">05</span
+              ><span class="mobile-menu__text">Contact</span></a
+            >
+          </li>
+        </ul>
+      </nav>
+      <div class="mobile-menu__foot">
+        <a class="btn btn--solid" href="/naveen_tennakoon.pdf" download>
+          Download CV
+          <svg class="icon btn__icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 4v11M7 10l5 5 5-5M5 20h14" />
+          </svg>
+        </a>
+      </div>
+    </div>
 
-			<div class="colorlib-footer">
-				<ul>
-					<li><a href="https://www.facebook.com/naveen.tennakoon.3"><i class="icon-facebook2"></i></a></li>
-					<li><a href="https://twitter.com/NaveenTz"><i class="icon-twitter2"></i></a></li>
-					<li><a href="https://www.instagram.com/naveen_tennakoon/"><i class="icon-instagram"></i></a></li>
-					<li><a href="https://www.linkedin.com/in/naveen-tennakoon-60800b177/"><i class="icon-linkedin2"></i></a></li>
-				</ul>
-			</div>
+    <main id="main">
+      <!-- ============ HERO ============ -->
+      <section id="home" class="section hero grain" aria-labelledby="hero-name">
+        <div class="media hero__bg" data-speed="0.6" aria-hidden="true">
+          <img
+            src="/src/assets/images/hero-1.webp"
+            alt=""
+            width="2400"
+            height="1600"
+            fetchpriority="high"
+          />
+        </div>
+        <div class="veil hero__veil" aria-hidden="true"></div>
 
-		</aside>
+        <div class="container hero__content">
+          <p class="label hero__kicker">Hi! I'm Naveen</p>
+          <h1 id="hero-name" class="hero__title">
+            <span class="line"><span class="line__inner">Naveen</span></span>
+            <span class="line"><span class="line__inner">Tennakoon</span></span>
+          </h1>
+          <p class="label hero__role">
+            <span class="rule" aria-hidden="true"></span>
+            <span>Software Engineer</span>
+            <span class="rule rule--end" aria-hidden="true"></span>
+          </p>
+          <p class="hero__lede">A good Programmer with great habits</p>
+          <div class="hero__actions">
+            <a class="btn" href="/naveen_tennakoon.pdf" download>
+              Download CV
+              <svg class="icon btn__icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 4v11M7 10l5 5 5-5M5 20h14" />
+              </svg>
+            </a>
+            <a class="btn" href="#contact">
+              Get in Touch
+              <svg class="icon btn__icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 12h15M13 6l6 6-6 6" />
+              </svg>
+            </a>
+          </div>
+        </div>
 
-		<div id="colorlib-main">
-			<section id="colorlib-hero" class="js-fullheight" data-section="home">
-				<div class="flexslider js-fullheight">
-					<ul class="slides">
-				   	<li style="background-image: url(images/img_bg_1.jpg);">
-				   		<div class="overlay"></div>
-				   		<div class="container-fluid">
-				   			<div class="row">
-					   			<div class="col-md-6 col-md-offset-3 col-md-pull-3 col-sm-12 col-xs-12 js-fullheight slider-text">
-					   				<div class="slider-text-inner js-fullheight">
-					   					<div class="desc">
-						   					<h1>Hi! <br>I'm Naveen</h1>
-						   					<h2>A good Programmer with great habits</h2>
-											<p><a class="btn btn-primary btn-learn" attributes-list download href="naveen_tennakoon.pdf" target="_blank">Download CV <i class="icon-download4"></i></a></p>
-										</div>
-					   				</div>
-					   			</div>
-					   		</div>
-				   		</div>
-				   	</li>
-				   	<li style="background-image: url(images/img_bg_2.jpg);">
-				   		<div class="overlay"></div>
-				   		<div class="container-fluid">
-				   			<div class="row">
-					   			<div class="col-md-6 col-md-offset-3 col-md-pull-3 col-sm-12 col-xs-12 js-fullheight slider-text">
-					   				<div class="slider-text-inner">
-					   					<div class="desc">
-						   					<h1>Got <br>an Idea?</h1>
-											<h2>Let's make it a reality</h2>
-											<p><a class="btn btn-primary btn-learn" href="#contact">Get in Touch <i class="icon-paperplane"></i></a></p>
-										</div>
-					   				</div>
-					   			</div>
-					   		</div>
-				   		</div>
-				   	</li>
-				  	</ul>
-			  	</div>
-			</section>
+        <a class="hero__cue" href="#about" aria-label="Scroll to About"></a>
+      </section>
 
-			<section class="colorlib-about" data-section="about">
-				<div class="colorlib-narrow-content">
-					<div class="row">
-						<div class="col-md-12">
-							<div class="row row-bottom-padded-sm animate-box" data-animate-effect="fadeInLeft">
-								<div class="col-md-12">
-									<div class="about-desc">
-										<span class="heading-meta">About Me</span>
-										<h2 class="colorlib-heading">Who Am I?</h2>
-										<p>I'm a Software Engineer currently employed at <a href="https://www.getsystem2.com/" target="_blank">System2 Fitness.</a>
-										</p>
-										<p>Within the brief career so far, I have worked with multiple tech stacks touching the fundamentals of
-										Software Engineering. I always use best practices with the final goal being an output that is productive and 
-										trust-worthy. Minimal design and less complication are prominent throughout my work, which I believe makes 
-										my contributions unique and attractive.  
-										</p>
-										<p>I am enthusiastic in learning new technologies and discovering new knowledge, and is keen on experimenting
-										with failure to thrive to be a better problem solver on each passing day.
-										</p>
-									</div>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-md-3 animate-box" data-animate-effect="fadeInLeft">
-									<div class="services color-1">
-										<span class="icon2"><i class="icon-world"></i></span>
-										<h3>Web Development</h3>
-									</div>
-								</div>
-								<div class="col-md-3 animate-box" data-animate-effect="fadeInRight">
-									<div class="services color-2">
-										<span class="icon2"><i class="icon-cloud3"></i></span>
-										<h3>Cloud Computing Solutions</h3>
-									</div>
-								</div>
-								<div class="col-md-3 animate-box" data-animate-effect="fadeInTop">
-									<div class="services color-3">
-										<span class="icon2"><i class="icon-phone3"></i></span>
-										<h3>Mobile Development</h3>
-									</div>
-								</div>
-								<div class="col-md-3 animate-box" data-animate-effect="fadeInBottom">
-									<div class="services color-4">
-										<span class="icon2"><i class="icon-data"></i></span>
-										<h3>Machine Learning & AI</h3>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
+      <!-- ============ ABOUT ============ -->
+      <section id="about" class="section about grain" aria-labelledby="about-title">
+        <div class="container">
+          <div class="about__grid">
+            <div class="about__copy">
+              <p class="eyebrow" data-reveal>
+                <span class="rule" aria-hidden="true"></span>About Me
+              </p>
+              <h2 id="about-title" class="h2">
+                <span class="line"><span class="line__inner">Who am I?</span></span>
+              </h2>
+              <p class="lead" data-reveal>I'm a Software Engineer currently employed at Avida.</p>
+              <p class="body" data-reveal>
+                Within the brief career so far, I have worked with multiple tech stacks touching the
+                fundamentals of Software Engineering. I always use best practices with the final
+                goal being an output that is productive and trust-worthy. Minimal design and less
+                complication are prominent throughout my work, which I believe makes my
+                contributions unique and attractive.
+              </p>
+              <p class="body" data-reveal>
+                I am enthusiastic in learning new technologies and discovering new knowledge, and is
+                keen on experimenting with failure to thrive to be a better problem solver on each
+                passing day.
+              </p>
+            </div>
 
-			<section class="colorlib-experience" data-section="experience">
-				<div class="colorlib-narrow-content">
-					<div class="row">
-						<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
-							<span class="heading-meta">Experience</span>
-							<h2 class="colorlib-heading animate-box">Work Experience</h2>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-12">
-				         <div class="timeline-centered">
-							<article class="timeline-entry animate-box" data-animate-effect="fadeInRight">
-					            <div class="timeline-entry-inner">
+            <figure class="about__figure" data-speed="0.92">
+              <div class="about__frame" data-reveal>
+                <div class="media">
+                  <img
+                    src="/src/assets/images/portrait.webp"
+                    alt="Portrait of Naveen Tennakoon"
+                    width="1100"
+                    height="1375"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="veil" aria-hidden="true"></div>
+              </div>
+            </figure>
+          </div>
 
-					               <div class="timeline-icon color-1">
-					                  <i class="icon-monitor"></i>
-					               </div>
+          <div class="focus">
+            <p class="label focus__label" data-reveal>Focus areas</p>
+            <ul class="focus__grid">
+              <li class="focus__card">
+                <div class="focus__top">
+                  <span class="label">01</span>
+                </div>
+                <h3 class="h3">Web Development</h3>
+              </li>
+              <li class="focus__card">
+                <div class="focus__top">
+                  <span class="label">02</span>
+                </div>
+                <h3 class="h3">Cloud Computing Solutions</h3>
+              </li>
+              <li class="focus__card">
+                <div class="focus__top">
+                  <span class="label">03</span>
+                </div>
+                <h3 class="h3">Mobile Development</h3>
+              </li>
+              <li class="focus__card">
+                <div class="focus__top">
+                  <span class="label">04</span>
+                </div>
+                <h3 class="h3">Machine Learning &amp; AI</h3>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
 
-					               <div class="timeline-label">
-					                	<h2>
-											<a href="#">Software Engineer | System2</a>
-											<span>2023-Present</span>
-										</h2>
-					                	<p>Started recently and is currently focusing development work on a 
-										worldwide fitness platform based on React and Firebase.</p>
-					               </div>
-					            </div>
-					         </article>
+      <!-- ============ EXPERIENCE — ROADMAP ============ -->
+      <section id="experience" class="section xp grain" aria-labelledby="xp-title">
+        <div class="container">
+          <div class="xp__head">
+            <p class="eyebrow eyebrow--center" data-reveal>
+              <span class="rule" aria-hidden="true"></span>Experience<span
+                class="rule rule--end"
+                aria-hidden="true"
+              ></span>
+            </p>
+            <h2 id="xp-title" class="h2">
+              <span class="line"><span class="line__inner">Work experience</span></span>
+            </h2>
+          </div>
 
-					         <article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
-					            <div class="timeline-entry-inner">
+          <div class="roadmap" data-roadmap>
+            <span class="roadmap__rail" aria-hidden="true"
+              ><span class="roadmap__rail-fill"></span
+            ></span>
 
-					               <div class="timeline-icon color-1">
-					                  <i class="icon-monitor"></i>
-					               </div>
+            <svg class="roadmap__svg" viewBox="0 0 360 1600" aria-hidden="true" focusable="false">
+              <path
+                class="roadmap__ghost"
+                d="M180 0 C180 80 260 120 250 200 C240 300 80 360 90 470 C95 530 110 560 110 600 C110 700 320 680 300 790 C285 870 170 860 185 790 C200 720 320 860 270 940 C260 960 250 980 250 1000 C250 1110 60 1180 95 1290 C105 1330 110 1370 110 1400 C110 1490 180 1520 180 1600"
+              />
+              <path
+                class="roadmap__path"
+                data-road
+                d="M180 0 C180 80 260 120 250 200 C240 300 80 360 90 470 C95 530 110 560 110 600 C110 700 320 680 300 790 C285 870 170 860 185 790 C200 720 320 860 270 940 C260 960 250 980 250 1000 C250 1110 60 1180 95 1290 C105 1330 110 1370 110 1400 C110 1490 180 1520 180 1600"
+              />
+              <g class="roadmap__stop" data-stop>
+                <circle class="roadmap__node" cx="250" cy="200" r="14" />
+                <circle class="roadmap__core" cx="250" cy="200" r="5.5" />
+                <text class="roadmap__year" x="222" y="219" text-anchor="end">2023</text>
+              </g>
+              <g class="roadmap__stop" data-stop>
+                <circle class="roadmap__node" cx="110" cy="600" r="14" />
+                <circle class="roadmap__core" cx="110" cy="600" r="5.5" />
+                <text class="roadmap__year" x="138" y="619" text-anchor="start">2022</text>
+              </g>
+              <g class="roadmap__stop" data-stop>
+                <circle class="roadmap__node" cx="250" cy="1000" r="14" />
+                <circle class="roadmap__core" cx="250" cy="1000" r="5.5" />
+                <text class="roadmap__year" x="222" y="1019" text-anchor="end">2020</text>
+              </g>
+              <g class="roadmap__stop" data-stop>
+                <circle class="roadmap__node" cx="110" cy="1400" r="14" />
+                <circle class="roadmap__core" cx="110" cy="1400" r="5.5" />
+                <text class="roadmap__year" x="138" y="1419" text-anchor="start">2019</text>
+              </g>
+            </svg>
 
-					               <div class="timeline-label">
-					                	<h2>
-											<a href="#">Software Engineer | Enactor</a>
-											<span>2022-2023</span>
-										</h2> 
-					                	<p>
-											Worked on a worldwide Point of Sales (POS) system based on Java and React.
-											Tackled a wide range of tasks from specification documentation to customer
-											query handling.
-										</p>
-					               </div>
-					            </div>
-					         </article>
+            <ol class="roadmap__list">
+              <li class="road-card road-card--right" style="grid-row: 1" data-card>
+                <p class="label">2023 — Present</p>
+                <h3 class="h3">Avida</h3>
+                <p class="road-card__role">Software Engineer</p>
+                <p class="body">
+                  Started recently and is currently focusing development work on a worldwide fitness
+                  platform based on React and Firebase.
+                </p>
+              </li>
+              <li class="road-card road-card--left" style="grid-row: 2" data-card>
+                <p class="label">2022 — 2023</p>
+                <h3 class="h3">Enactor</h3>
+                <p class="road-card__role">Software Engineer</p>
+                <p class="body">
+                  Worked on a worldwide Point of Sales (POS) system based on Java and React. Tackled
+                  a wide range of tasks from specification documentation to customer query handling.
+                </p>
+              </li>
+              <li class="road-card road-card--right" style="grid-row: 3" data-card>
+                <p class="label">2020 — 2021</p>
+                <h3 class="h3">SMBApps</h3>
+                <p class="road-card__role">Junior Developer</p>
+                <p class="body">
+                  A lot of experience was gained during this period as a courtesy of many
+                  experienced seniors in the field. Specialized in areas such as web and mobile
+                  applications, remote development, cloud services and architectures, database
+                  management, UI/UX and application design.
+                </p>
+              </li>
+              <li class="road-card road-card--left" style="grid-row: 4" data-card>
+                <p class="label">2019 — 2020</p>
+                <h3 class="h3">SMBApps</h3>
+                <p class="road-card__role">Quality Assurance Engineer Intern</p>
+                <p class="body">
+                  Worked on manual test documentation, test scripting and automation tasks.
+                </p>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </section>
 
-					         <article class="timeline-entry animate-box" data-animate-effect="fadeInRight">
-					            <div class="timeline-entry-inner">
-					               <div class="timeline-icon color-2">
-					                  <i class="icon-monitor"></i>
-					               </div>
-					               <div class="timeline-label">
-					               	<h2>
-										<a href="#">Junior Developer | SMBApps</a>
-										<span>2020-2021</span>
-									</h2>
-					                	<p>A lot of experience was gained during this period as a courtesy of many experienced
-										seniors in the field. Specialized in areas such as web and mobile applications, remote 
-										development, cloud services and architectures, database management, UI/UX and application
-										design.</p>
-					               </div>
-					            </div>
-					         </article>
+      <!-- ============ BLOG ============ -->
+      <section id="blog" class="section grain" aria-labelledby="blog-title">
+        <div class="container">
+          <div class="blog__head">
+            <div class="blog__titles">
+              <p class="eyebrow" data-reveal><span class="rule" aria-hidden="true"></span>Blog</p>
+              <h2 id="blog-title" class="h2">
+                <span class="line"><span class="line__inner">Recent blog</span></span>
+              </h2>
+            </div>
+            <a class="btn" href="https://medium.com/@naveentn" target="_blank" rel="noopener">
+              More articles
+              <svg class="icon btn__icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M7 17L17 7M8 7h9v9" />
+              </svg>
+            </a>
+          </div>
 
-					         <article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
-					            <div class="timeline-entry-inner">
-					               <div class="timeline-icon color-3">
-					                  <i class="icon-monitor"></i>
-					               </div>
-					               <div class="timeline-label">
-					               	<h2>
-										<a href="#">Quality Assurance Engineer Intern | SMBApps</a>
-										<span>2019-2020</span>
-									</h2>
-					                  <p>Worked on manual test documentation, test scripting and automation tasks.</p>
-					               </div>
-					            </div>
-					         </article>
+          <ul class="blog__grid">
+            <li>
+              <a
+                class="card"
+                href="https://medium.com/@naveentn/aws-regions-and-availability-zones-az-cc4a3c0781ea"
+                target="_blank"
+                rel="noopener"
+              >
+                <div class="card__media">
+                  <img
+                    src="/src/assets/images/blog-aws-regions.webp"
+                    alt=""
+                    width="900"
+                    height="661"
+                    loading="lazy"
+                  />
+                  <div class="veil" aria-hidden="true"></div>
+                </div>
+                <div class="card__body">
+                  <p class="card__meta label">
+                    <time datetime="2022-06-05">June 05, 2022</time
+                    ><span class="card__dot" aria-hidden="true"></span><span>AWS</span
+                    ><span class="card__dot" aria-hidden="true"></span><span>2 comments</span>
+                  </p>
+                  <h3 class="card__title">
+                    AWS: Regions, Availability Zones (AZ), and Data Centers
+                  </h3>
+                  <p class="card__excerpt">
+                    Amazon Web Services (AWS), are a set of services that enables users to build,
+                    deploy and manage software application requirements within the cloud.
+                  </p>
+                  <span class="card__more"
+                    >Read more<svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M4 12h15M13 6l6 6-6 6" /></svg
+                  ></span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a
+                class="card"
+                href="https://medium.com/@naveentn/aws-iam-correct-application-of-identities-to-secure-the-aws-resources-b0902041ad2a"
+                target="_blank"
+                rel="noopener"
+              >
+                <div class="card__media">
+                  <img
+                    src="/src/assets/images/blog-aws-iam.webp"
+                    alt=""
+                    width="900"
+                    height="599"
+                    loading="lazy"
+                  />
+                  <div class="veil" aria-hidden="true"></div>
+                </div>
+                <div class="card__body">
+                  <p class="card__meta label">
+                    <time datetime="2022-06-25">June 25, 2022</time
+                    ><span class="card__dot" aria-hidden="true"></span><span>AWS</span
+                    ><span class="card__dot" aria-hidden="true"></span><span>0 comments</span>
+                  </p>
+                  <h3 class="card__title">
+                    AWS — IAM: Correct application of Identities to secure the AWS resources
+                  </h3>
+                  <p class="card__excerpt">
+                    A common misconception anyone could have when it comes to understanding AWS
+                    Identity Access Management (IAM) is the ideas behind IAM users, policies, roles
+                    and groups.
+                  </p>
+                  <span class="card__more"
+                    >Read more<svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M4 12h15M13 6l6 6-6 6" /></svg
+                  ></span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a
+                class="card"
+                href="https://medium.com/@naveentn/dependency-injection-with-spring-boot-annotations-c743806d7326"
+                target="_blank"
+                rel="noopener"
+              >
+                <div class="card__media">
+                  <img
+                    src="/src/assets/images/blog-spring-di.webp"
+                    alt=""
+                    width="900"
+                    height="599"
+                    loading="lazy"
+                  />
+                  <div class="veil" aria-hidden="true"></div>
+                </div>
+                <div class="card__body">
+                  <p class="card__meta label">
+                    <time datetime="2022-07-31">July 31, 2022</time
+                    ><span class="card__dot" aria-hidden="true"></span><span>Spring Boot</span
+                    ><span class="card__dot" aria-hidden="true"></span><span>0 comments</span>
+                  </p>
+                  <h3 class="card__title">Dependency Injection with Spring Boot annotations</h3>
+                  <p class="card__excerpt">
+                    Dependency Injection (DI) is a common practice used in any object oriented
+                    programming language to easily create reusable and readable code components.
+                  </p>
+                  <span class="card__more"
+                    >Read more<svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M4 12h15M13 6l6 6-6 6" /></svg
+                  ></span>
+                </div>
+              </a>
+            </li>
+          </ul>
 
-					         <article class="timeline-entry begin animate-box" data-animate-effect="fadeInBottom">
-					            <div class="timeline-entry-inner">
-					               <div class="timeline-icon color-none">
-					               </div>
-					            </div>
-					         </article>
-					      </div>
-					   </div>
-				   </div>
-				</div>
-			</section>
+          <div class="blog__more-mobile">
+            <a class="btn" href="https://medium.com/@naveentn" target="_blank" rel="noopener">
+              More articles
+              <svg class="icon btn__icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M7 17L17 7M8 7h9v9" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </section>
 
-			<section class="colorlib-blog" data-section="blog">
-				<div class="colorlib-narrow-content">
-					<div class="row">
-						<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
-							<span class="heading-meta">Read</span>
-							<h2 class="colorlib-heading">Recent Blog</h2>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInLeft">
-							<div class="blog-entry">
-								<a href="https://medium.com/@naveentn/aws-regions-and-availability-zones-az-cc4a3c0781ea" class="blog-img"><img src="images/blog-1.png" class="img-responsive"></a>
-								<div class="desc">
-									<span><small>June 05, 2022 </small> | <small> AWS </small> | <small> <i class="icon-bubble3"></i> 2</small></span>
-									<h3><a href="https://medium.com/@naveentn/aws-regions-and-availability-zones-az-cc4a3c0781ea">AWS: Regions, Availability Zones (AZ), and Data Centers</a></h3>
-									<p>Amazon Web Services (AWS), are a set of services that enables users to build, deploy and manage software application requirements within the cloud.
-									<a href="https://medium.com/@naveentn/aws-regions-and-availability-zones-az-cc4a3c0781ea"> Read more</a></p>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInRight">
-							<div class="blog-entry">
-								<a href="https://medium.com/@naveentn/aws-iam-correct-application-of-identities-to-secure-the-aws-resources-b0902041ad2a" class="blog-img"><img src="images/blog-2.png" class="img-responsive"></a>
-								<div class="desc">
-									<span><small>June 25, 2022 </small> | <small> AWS </small> | <small> <i class="icon-bubble3"></i> 0</small></span>
-									<h3><a href="https://medium.com/@naveentn/aws-iam-correct-application-of-identities-to-secure-the-aws-resources-b0902041ad2a">AWS — IAM: Correct application of Identities to secure the AWS resources</a></h3>
-									<p>A common misconception anyone could have when it comes to understanding AWS Identity Access Management (IAM) is the ideas behind IAM users, policies, roles and groups.
-									<a href="https://medium.com/@naveentn/aws-iam-correct-application-of-identities-to-secure-the-aws-resources-b0902041ad2a"> Read more</a></p>
+      <!-- ============ CONTACT ============ -->
+      <section id="contact" class="section contact grain" aria-labelledby="contact-title">
+        <div class="media contact__bg" data-speed="0.7" aria-hidden="true">
+          <img
+            src="/src/assets/images/hero-2.webp"
+            alt=""
+            width="2400"
+            height="1600"
+            loading="lazy"
+          />
+        </div>
+        <div class="veil contact__veil" aria-hidden="true"></div>
 
-								</div>
-							</div>
-						</div>
-						<div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInLeft">
-							<div class="blog-entry">
-								<a href="https://medium.com/@naveentn/dependency-injection-with-spring-boot-annotations-c743806d7326" class="blog-img"><img src="images/blog-3.jpg" class="img-responsive"></a>
-								<div class="desc">
-									<span><small>July 31, 2022 </small> | <small> Spring Boot </small> | <small> <i class="icon-bubble3"></i> 0</small></span>
-									<h3><a href="https://medium.com/@naveentn/dependency-injection-with-spring-boot-annotations-c743806d7326">Dependency Injection with Spring Boot annotations</a></h3>
-									<p>Dependency Injection (DI) is a common practice used in any object oriented programming language to easily create reusable and readable code components.
-									<a href="https://medium.com/@naveentn/dependency-injection-with-spring-boot-annotations-c743806d7326"> Read more</a></p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-12 animate-box text-center">
-							<p><a href="https://medium.com/@naveentn" class="btn btn-primary btn-learn">More articles <i class="icon-arrow-right-thick"></i></a></p>
-						</div>
-					</div>
-				</div>
-			</section>
+        <div class="container">
+          <div class="contact__inner">
+            <p class="eyebrow eyebrow--center" data-reveal>
+              <span class="rule" aria-hidden="true"></span>Get in Touch<span
+                class="rule rule--end"
+                aria-hidden="true"
+              ></span>
+            </p>
+            <h2 id="contact-title" class="h2">
+              <span class="line"><span class="line__inner">Contact</span></span>
+            </h2>
+            <p class="lead contact__sub" data-reveal>Got an Idea? Let's make it a reality</p>
 
-			<section class="colorlib-contact" data-section="contact" id="contact">
-				<div class="colorlib-narrow-content">
-					<div class="row">
-						<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
-							<span class="heading-meta">Get in Touch</span>
-							<h2 class="colorlib-heading">Contact</h2>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-6">
-							<div class="colorlib-feature colorlib-feature-sm animate-box" data-animate-effect="fadeInLeft">
-								<div class="colorlib-icon">
-									<i class="icon-map"></i>
-								</div>
-								<div class="colorlib-text">
-									<p>Kanatthawatte, Pathakada, Nivithigala.</p>
-								</div>
-							</div>
+            <a class="contact__email u-link" href="mailto:connect.naveent@gmail.com" data-reveal>
+              connect.naveent@gmail.com
+            </a>
 
-							<div class="colorlib-feature colorlib-feature-sm animate-box" data-animate-effect="fadeInLeft">
-								<div class="colorlib-icon">
-									<i class="icon-mail"></i>
-								</div>
-								<div class="colorlib-text">
-									<p>
-										<a href= "mailto:naveentennakoon27@gmail.com" >naveentennakoon27@gmail.com</a>  
-									</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 col-md-push-1">
-							<div class="colorlib-feature colorlib-feature-sm animate-box" data-animate-effect="fadeInRight">
-								<div class="colorlib-icon">
-									<i class="icon-phone"></i>
-								</div>
-								<div class="colorlib-text">
-									<p>
-										<a href="tel://+94705931399">+94 70 593 1399</a><br/>
-										<a href="tel://+94766883820">+94 76 688 3820</a>
-									</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
+            <div class="contact__actions" data-reveal>
+              <a
+                class="btn btn--solid"
+                href="https://www.linkedin.com/in/naveen-tennakoon-60800b177/"
+                target="_blank"
+                rel="noopener"
+              >
+                LinkedIn
+                <svg class="icon btn__icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M7 17L17 7M8 7h9v9" />
+                </svg>
+              </a>
+            </div>
+          </div>
 
-			<div class="colorlib-footer text-center">
-				<p><small>
-					&copy; Copyright <script>document.write(new Date().getFullYear());</script> All rights reserved. Credits: <a href="https://colorlib.com" target="_blank">Colorlib</a>
-				</small></p>
-			</div>
-
-		</div><!-- end:colorlib-main -->
-	</div><!-- end:container-wrap -->
-	</div><!-- end:colorlib-page -->
-
-	<!-- jQuery -->
-	<script src="js/jquery.min.js"></script>
-	<!-- jQuery Easing -->
-	<script src="js/jquery.easing.1.3.js"></script>
-	<!-- Bootstrap -->
-	<script src="js/bootstrap.min.js"></script>
-	<!-- Waypoints -->
-	<script src="js/jquery.waypoints.min.js"></script>
-	<!-- Flexslider -->
-	<script src="js/jquery.flexslider-min.js"></script>
-	<!-- Owl carousel -->
-	<script src="js/owl.carousel.min.js"></script>
-	<!-- Counters -->
-	<script src="js/jquery.countTo.js"></script>
-	
-	
-	<!-- MAIN JS -->
-	<script src="js/main.js"></script>
-
-	</body>
+          <footer class="footer">
+            <div class="footer__left">
+              <span class="brand" aria-hidden="true">NT</span>
+              <p class="label">&copy; <span data-year>2026</span> Naveen Tennakoon</p>
+            </div>
+            <ul class="footer__social">
+              <li>
+                <a
+                  href="https://www.linkedin.com/in/naveen-tennakoon-60800b177/"
+                  target="_blank"
+                  rel="noopener"
+                  >LinkedIn</a
+                >
+              </li>
+            </ul>
+            <a class="icon-btn" href="#home" aria-label="Back to top">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 20V5M6 11l6-6 6 6" />
+              </svg>
+            </a>
+          </footer>
+        </div>
+      </section>
+    </main>
+  </body>
 </html>
-
